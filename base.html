@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Store99{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/icon.png' %}" type="image/png">
+
+    <!-- Подключаем основные стили -->
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+    <div class="container">
+        <!-- Логотип -->
+        <div class="logo">
+        <a href="{% url 'index' %}">Store99</a>
+        </div>
+
+        <!-- Навигация по ссылкам -->
+        <nav class="nav-menu">
+        <a href="{% url 'catalog' %}" class="nav-item">Catalog</a>
+        <a href="{% url 'cart' %}" class="nav-item">Cart</a>
+        <a href="{% url 'about' %}" class="nav-item">About</a>
+        </nav>
+
+        <!-- Кнопки Login / Sign up -->
+        <div class="btn-group">
+        <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-signup">Sign up</a>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Основной контент -->
+    <main class="site-main">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-copy">© 2024-2025 – Store99</p>
+            <nav class="footer-links">
+                <a href="{% url 'catalog' %}" class="footer-link">Catalog</a>
+                <a href="{% url 'cart' %}" class="footer-link">Cart</a>
+                <a href="{% url 'about' %}" class="footer-link">About</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
